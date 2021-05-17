@@ -14,7 +14,7 @@ namespace Adventure_Game
 {
     public partial class gameForm : Form
     {
-        // Track page user is on
+        // Track page user is on and global variable for sounds
         int page = 1;
         SoundPlayer musicPlayer;
 
@@ -26,6 +26,7 @@ namespace Adventure_Game
 
         private void option1Button_Click(object sender, EventArgs e)
         {
+            //check current page and the the next one to flip to if option 1 is selected
             if (page == 1)
             {
                 page = 2;
@@ -51,11 +52,13 @@ namespace Adventure_Game
             else if (page == 20) { page = 1; }
             else if (page == 21) { page = 1; }
 
+            //Display text and game options based on current page
             DisplayPage();
         }
 
         private void option2Button_Click(object sender, EventArgs e)
         {
+            //check current page and the next one to flip to if option 2 is selected
             if (page == 1)
             {
                 page = 3;
@@ -81,12 +84,14 @@ namespace Adventure_Game
             else if (page == 20) { page = 50; }
             else if (page == 21) { page = 50; }
 
+            //Display text and game options based on current page
             DisplayPage();
         }
 
 
         public void DisplayPage()
         {
+            //create a universal switch statement
             switch (page)
             {
                 case 1:
